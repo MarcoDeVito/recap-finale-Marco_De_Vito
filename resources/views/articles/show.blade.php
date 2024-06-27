@@ -6,5 +6,13 @@
         <h1 class="text-center">{{$article->title}}</h1>
         <p>{{$article->body}}</p>
         <p>Creato da {{$article->user->name}}</p>
+        <p>Categorie: 
+            @forelse ( $article->categories as $category)
+               <a href="{{route('categories.show',['category'=>$category])}}"
+                   >{{$category->name}}</a>@if (!$loop->last),@endif
+            @empty
+                Nessuna categoria
+            @endforelse
+        </p>
     </div>
 </x-main>

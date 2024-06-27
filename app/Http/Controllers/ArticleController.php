@@ -31,8 +31,10 @@ class ArticleController extends Controller implements HasMiddleware
      * Show the form for creating a new resource.
      */
     public function create()
+
     {
-        return view('articles.create');
+        $categories=Category::all();
+        return view('articles.create',compact('categories'));
     }
 
     /**
@@ -55,6 +57,7 @@ class ArticleController extends Controller implements HasMiddleware
             'image' => $path_image,
             'user_id' => auth()->user()->id
         ]);
+        
 
         $article->categories()->attach($request->categories);
 
@@ -74,8 +77,8 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function edit(Article $article)
     {
-        Category::all();
-        return view('articles.edit', compact('article',''));
+        $categories=Category::all();
+        return view('articles.edit', compact('article', 'categories'));
     }
 
     /**
@@ -96,6 +99,7 @@ class ArticleController extends Controller implements HasMiddleware
             'image' => $path_image,
         ]);
         $article->categories()->sync($request->categories);
+        return redirect()->route('articles.index');
     }
 
     /**
