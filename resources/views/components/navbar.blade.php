@@ -18,6 +18,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('categories.index')}}">Categorie</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('api.article')}}">API</a>
+          </li>
           
         </ul>
         <div class="ms-auto me-5">

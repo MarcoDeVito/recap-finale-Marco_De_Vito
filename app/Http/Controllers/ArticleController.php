@@ -25,6 +25,8 @@ class ArticleController extends Controller implements HasMiddleware
         return view('articles.index', compact('articles'));
     }
 
+   
+
     /**
      * Show the form for creating a new resource.
      */
