@@ -21,6 +21,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('api.article')}}">API</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('anime.genre')}}">Anime</a>
+          </li>
           
         </ul>
         <div class="ms-auto me-5">
